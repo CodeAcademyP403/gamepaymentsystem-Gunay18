@@ -1,0 +1,46 @@
+﻿@model List<Payment>
+@{
+    ViewData["Title"] = "Index";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css'>
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <h2 style="padding-top:50px">All payments</h2>
+        <p>Below are the list of all game purchases:</p>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Player IP</th>
+                    <th>Game ID</th>
+                    <th>Price</th>
+                    <th>Date</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody>
+
+                @foreach (Payment payment in Model)
+                {
+                    <tr>
+                        <td>@payment.UserIP</td>
+                        <td>@payment.GameId</td>
+                        <td>@payment.Price</td>
+                        <td>@payment.PaymentTime</td>
+                        <td>@payment.Status</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
+

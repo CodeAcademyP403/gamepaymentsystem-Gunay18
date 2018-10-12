@@ -1,0 +1,63 @@
+﻿
+@{
+    ViewData["Title"] = "Payment";
+}
+
+@model GameModel
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css'>
+
+    <title>Document</title>
+</head>
+<style>
+    h3 {
+        text-align: center;
+        margin-top: 100px;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+    #price {
+        display: block;
+        width: 200px;
+        margin: 30px 0;
+    }
+
+    h3, form {
+        text-align: center;
+    }
+
+    form {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+    }
+</style>
+<body>
+    <div class="container">
+        <h3>@Context.Session.GetString("Name")</h3>
+        <form asp-action="Payment"  asp-controller="Transaction" method="post" >
+            <div class="form-group">
+
+                <input type="hidden" value="@Model.Id" />
+
+                <label for="sel1">Select price:</label>
+                <input type="number" asp-for="Price" min=@Context.Session.GetString("MinPrice") max="@Context.Session.GetString("MaxPrice")"
+                       name="" id="price" value="@Context.Session.GetString("MinPrice")">
+            </div>
+            <input class="btn btn-success" type="submit" value="Purchase">
+
+        </form>
+    </div>
+
+
+
+
+</body>
+</html>
+

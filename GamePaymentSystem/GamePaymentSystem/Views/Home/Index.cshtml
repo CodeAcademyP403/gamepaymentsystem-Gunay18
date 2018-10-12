@@ -1,0 +1,182 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+}
+
+@model List<Game>
+
+
+<!DOCTYPE html>
+<html>
+
+<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+<head>
+
+    <script>addEventListener('error', window.__e=function f(e){f.q=f.q||[];f.q.push(e)});</script>
+    <link rel="shortcut icon" href="~/images.crazygames.com/faviconedbd.png?auto=format,compress&amp;ch=DPR&amp;q=90&amp;cs=strip&amp;w=16" type="image/png" />
+    <meta http-equiv="Accept-CH" content="DPR">
+    <title>Crazy Games - Free Online Games on CrazyGames.com</title>
+    <meta name="description" content="Play free online games at CrazyGames, the best place to play high-quality browser games. We add new games every day. Have fun!">
+    <link rel="preconnect" href="https://images.crazygames.com/">
+    <link href="assets/css/new7212.css?v=1.55" rel="stylesheet">
+
+    <link rel='preconnect' href='http://files.crazygames.com/'>
+    <link rel="shortcut icon" type="image/png" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAJElEQVR4AWNgbD31Hx8GAkZ8eHgYMGoAQQV+Zf/x4WFhwKgBABzfg58BLs8eAAAAAElFTkSuQmCC">
+    <link rel="canonical" href="index.html" />
+    <link rel="alternate" media="only screen and (max-width: 640px)" href="https://m.crazygames.com/" />
+
+    <style>
+        .async-hide {
+            opacity: 0 !important
+        }
+        #login{
+            background-color: white;
+        }
+    </style>
+   
+    <link rel="alternate" hreflang="en" href="index.html" />
+    <link rel="alternate" hreflang="es" href="https://www.1001juegos.com/" />
+    <link rel="alternate" hreflang="it" href="https://www.gioca.re/" />
+    <link rel="alternate" hreflang="nl" href="https://www.speelspelletjes.nl/" />
+    <link rel="alternate" hreflang="id" href="https://www.onlinegame.co.id/" />
+    <link rel="next" href="2.html" />
+  
+</head>
+<body>
+    <div id="top">
+     
+        <div id="topMid">
+            <a href="index.html">
+                <h2 id="headerTop">
+                    <span class="green">C</span><span class="yellow">r</span><span class="orange">a</span><span class="red">z</span><span class="purple">y</span>Games
+                </h2>
+            </a>
+            <div  id="login"> <a asp-action="Login" asp-controller="Account"><span>Login</span></a>
+            </div>
+        </div>
+    </div>
+    <div id="rest">
+        <style type="text/css">
+            #menu ul {
+                width: 1128px;
+            }
+        </style>
+        <div id="menu">
+            <ul>
+                <li>
+                    <a href="index.html" class="regularB" id="active">
+                        Home
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <div id="main" style="text-align:center;">
+       
+            <div class="mainPart" style="padding:4px 5px 5px 5px;">
+                <div id="games-container">
+                    <div id="games-main-column">
+                     
+                        <ul class="games-ul">
+
+                            @foreach (Game game in Model)
+                            {
+                                <li>
+                                    <div class="tile" data-game-slug="bullet-force-multiplayer" data-image-src=@game.PhotoPath>
+                                        <a class="" asp-action="Payment" asp-controller="Transaction" asp-route-id=@game.Id>
+                                            <div class="image-container">
+                                                <img src=@game.PhotoPath alt=@game.Name width="180" height="111" />
+                                                <div class="tileTitle">
+                                                    <div class="tileTitleOverflow">
+                                                        @game.Name
+                                                    </div>
+                                                    <span>
+                                                        @game.MinPrice
+                                                    </span>
+                                                    <div class="clear"></div>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </li>
+                            }
+                            <li>
+                @*<div class="tile" data-game-slug="bullet-force-multiplayer" data-video-src="bullet-force-multiplayer-trimmedb.mp4" data-video-height="112" data-video-width="180" data-image-src="~/images.crazygames.com/bulletforcemultiplayerb88d3.jpg?auto=format,compress&amp;ch=DPR&amp;q=90&amp;cs=strip&amp;w=180">
+                    <a href="game/bullet-force-multiplayer.html" class="">
+                        <div class="image-container">
+                            <img src="~/images.crazygames.com/bulletforcemultiplayerb88d3.jpg?auto=format,compress&amp;ch=DPR&amp;q=90&amp;cs=strip&amp;w=180" alt="Bullet Force" width="180" height="111" />
+                            <div class="tileTitle">
+                                <div class="tileTitleOverflow">
+                                    Bullet Force
+                                </div>
+                                <span>
+                                    9.1
+                                </span>
+                                <div class="clear"></div>
+                            </div>
+                        </div>
+                    </a>
+                </div>*@
+            </li>
+
+
+
+
+
+
+                        </ul>
+                    </div>
+                </div>
+                <div style="line-height:24px;">
+                    <p class="pagination"><strong>1</strong><a href="2.html">2</a><a href="3.html">3</a><a href="4.html">4</a><a href="5.html">5</a><a href="6.html">6</a><a href="2.html">&rsaquo;</a></p><div class="clear"></div>
+                    <div style="line-height:24px;">
+                        <p><h2>Welcome to Crazy Games</h2><p>Our goal here at Crazy Games is to provide you with the best free online games on the Internet. We play a lot of games to manually select only the highest-quality games and try to add new games every day. We categorize our games into 11 categories, the most popular of which are driving, shooting, clicker, and .io. We started off as a driving games website, and have collected <a href="c/driving.html">about 1000 driving games</a> over the years. These games include games about <a href="t/car.html">cars</a>, <a href="t/bike.html">bikes</a>, <a href="t/monster-truck.html">monster trucks</a>, and any other vehicles that you can think of. Later our <a href="c/shooting.html">shooting games</a> have taken off. This is primarily thanks to first person shooters such as <a href="game/bullet-force-multiplayer.html">Bullet Force</a>, <a href="game/combat-reloaded.html">Combat Reloaded</a>, and <a href="game/pixel-warfare-5.html">Pixel Warfare</a>. Besides these evergreen categories, we also focus on new genres such as <a href="c/io.html">.io games</a> and <a href="c/clicker.html">clicker games</a>. Both of these genres have become hugely popular, thanks to games like <a href="game/zombsroyaleio.html">ZombsRoyale.io</a>, <a href="game/survivio.html">Surviv.io</a>, <a href="game/slitherio.html">Slither.io</a>, Cookie Clicker, Doge Miner (1 and 2), and Enchanted Heroes. Great games often appear in series, and we do our best to collect all the games in particular series. Some great examples are <a href="s/wheely.html">Wheely</a>, <a href="s/moto-x3m.html">Moto X3M</a>, Papa Louie, and the Combat games. But there are a lot more great games of which there are multiple editions! Our all time most played games are <a href="game/run-3.html">Run 3</a>, <a href="game/slope.html">Slope</a>, and <a href="game/madalin-stunt-cars-2.html">Madalin Stunt Cars 2</a>, make sure to check them out!</p><p>We do our best to make the site as fast and reliable as possible. If something is not working, or if there is anything you want to tell us, <a href="contact.html">reach out</a> and let us know! <br /></p>
+                    </div>
+                    <a href="https://www.facebook.com/crazygamesofficial/" target="_blank" rel="nofollow noopener noreferrer">
+                        <img src="~/images.crazygames.com/facebooklikebuttonce9d0.png?auto=format,compress&amp;ch=DPR&amp;q=90&amp;cs=strip&amp;w=74">
+                    </a><br />
+                </div>
+            </div>
+            <div id="f">
+                <a href="index.html">Home</a> |
+                <a href="about.html">About</a> |
+                <a href="https://developer.crazygames.com/" target="_blank">Developers</a> |
+                <a rel="nofollow" href="addtoyoursite.html">Games for your Site</a> | <a href="jobs.html">Jobs</a> | <a href="scholarship.html">Scholarship</a> | <a rel="nofollow" href="terms-and-conditions.html">Terms of Service</a> |
+                <a rel="nofollow" href="privacy-policy.html">Privacy</a> |
+                <a rel="nofollow" href="contact.html">Contact</a>
+                <p>
+                    &copy; Copyright 2013 - 2018 CrazyGames.com - <a href="https://plus.google.com/+Crazygames_com" target="_blank" rel="publisher">Find us on Google Plus</a><br />
+                    <span style="font-size:10px;">
+                        CrazyGames.com is an initiative of Maxflow BVBA, Lei 33/402, 3000 Leuven, Belgium.(VAT: BE 0550.758.377)
+                    </span>
+                </p><br />
+            </div>
+        </div>
+    </div>
+    <script data-cfasync="true" type="text/javascript">
+            var jsGlobals = {
+                search_url : '//www.crazygames.com/search_json'
+            };
+    </script>
+    <script data-cfasync="true" src="assets/js/common6138.js?v=0.102" defer></script>
+    <script>
+    function init() {
+        var imgDefer = document.getElementsByTagName('img');
+        for (var i=0; i<imgDefer.length; i++) {
+            if(imgDefer[i].getAttribute('data-src')) {
+                imgDefer[i].setAttribute('src',imgDefer[i].getAttribute('data-src'));
+            } } }
+    window.addEventListener('load', init);
+    </script>
+    <script>
+    segmentTrack("ViewedGamesOverview", {
+      pageSlug: "",
+      pageType: "home",
+      pageNum: "1",
+    });
+    </script>
+    
+</body>
+
+</html>
+
